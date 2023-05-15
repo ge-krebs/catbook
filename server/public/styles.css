@@ -1,0 +1,18 @@
+body {
+  background-color: lightblue;
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  max-width: 1028px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Yatra One', cursive;
+  margin: 0 auto;
+}
+
+.display-pic {
+  border: 5px solid white;
+  border-radius: 10px;
+  margin: 0 auto;
+}
