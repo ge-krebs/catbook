@@ -1,4 +1,6 @@
 const express = require('express')
+//file upload
+const fileUpload = require('express-fileupload');
 
 const server = express()
 
@@ -7,6 +9,8 @@ module.exports = server
 server.use(express.static('server/public'))
 
 server.use(express.urlencoded({extended: false}))
+//file upload
+server.use(fileUpload())
 
 server.get('/compliment', (req, res) => {
   res.send('<h1>you look <em>nice</em> today</h1>')
@@ -43,4 +47,15 @@ server.get('/getname', (req, res) => {
 //post named compliment
 server.post('/named-compliment', (req, res) => {
   res.send('<h1>' + req.body.name + ', you look beautiful today <3</h1>')
+})
+
+// https://pqina.nl/blog/upload-image-with-nodejs/
+// upload images to public?
+server.post('/upload', (req, res) => {
+  const {image} = req.files;
+  if(!image) return res.sendStatus(400)
+
+  //move image to public folder
+  image.mv(__dirname + '/public/' + image.name)
+  res.sendFile(__dirname + '/public/get-name.html')
 })

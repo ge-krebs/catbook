@@ -10,9 +10,19 @@ body {
 
 }
 
+#header {
+  color: rgb(219, 246, 255);
+  height: 100px;
+  text-align: center;
+  border-bottom: 5px solid rgb(219, 246, 255);
+  padding-top: 20px;
+  font-size: 2rem;
+}
+
 h1 {
   font-family: 'Yatra One', cursive;
   margin: 0 auto;
+  text-decoration: none;
 }
 
 .display-pic {
@@ -28,6 +38,7 @@ button {
   background-color: rgb(219, 246, 255);
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
+  margin: 10px 10px 10px 10px;
 }
 
 #input {
@@ -41,11 +52,18 @@ button {
   margin: 0 auto;
 }
 
-#compliment-form {
-  margin: 0 auto;
+.form-items {
   text-align: center;
+  margin: 10px 10px 10px 10px;
 }
 
-.page-text {
-  /* font-size: 1.5rem; */
+#img-upload {
+  color: rgb(93, 150, 169);;
+  background-color: rgb(219, 246, 255);
+  display: flex;
+  width: 200px;
+  font-size: 1rem;
+  margin: 20px 20px 20px 20px;
+  margin: 0 auto;
+  border: white solid 2px;
 }
