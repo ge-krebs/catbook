@@ -27,3 +27,5 @@ server.get('/profiles/:id', (req, res) => {
     res.sendFile(__dirname + '/sampson.html')
   }
 })
+
+server.get('/search', (req, res))
