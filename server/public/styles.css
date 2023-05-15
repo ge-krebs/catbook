@@ -1,9 +1,13 @@
 body {
-  background-color: lightblue;
+  background-color: rgb(93, 150, 169);
+  color: white;
   font-family: 'Roboto', sans-serif;
-  align-items: center;
+  text-align: center;
   max-width: 1028px;
   margin: 0 auto;
+  /* margin-top: 30%; */
+  font-size: 1.2rem;
+
 }
 
 h1 {
@@ -15,4 +19,33 @@ h1 {
   border: 5px solid white;
   border-radius: 10px;
   margin: 0 auto;
+  max-width: 600px;
+}
+
+button {
+  color: rgb(93, 150, 169);
+  border: 2px solid white;
+  background-color: rgb(219, 246, 255);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+
+#input {
+  background-color: rgb(219, 246, 255);
+  color: rgb(93, 150, 169);
+  border: white solid 2px;
+  font-size: 1.5rem;
+  width: 200px;
+  margin: 20px 20px 20px 20px;
+  display: flex;
+  margin: 0 auto;
+}
+
+#compliment-form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-text {
+  /* font-size: 1.5rem; */
 }

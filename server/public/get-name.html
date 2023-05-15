@@ -12,9 +12,18 @@
 </head>
 <body>
   <h1>CatBook</h1>
-  <form action="">
-    <label for="name">Enter your name:</label>
-    <input type="text" id="name" name="name">
+  <p class="page-text">Request a compliment :-)</p>
+  <div id="compliment-form">
+  <form action="/named-compliment" method="post">
+    <label class="page-text" for="name">Name:</label>
+    <input type="text" id="input" name="name">
+    <button>Submit</button>
   </form>
+  <form action="/profile" method="get">
+    <label for="search" class="page-text">Search for a cat:</label>
+    <input type="text" id="input" name="name">
+    <button>Search</button>
+  </form>
+  </div>
 </body>
 </html>
