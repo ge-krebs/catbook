@@ -1,0 +1,22 @@
+<div id="cat-img-container">
+  <div class="sml-cat-img"><img class="cat-img-file" src="fanta.jpeg" alt="orange cat"></div>
+  <div class="sml-cat-img"><img class="cat-img-file" src="sampson.jpeg" alt="orange cat"></div>
+  <div class="sml-cat-img"><img class="cat-img-file" src="silvia.webp" alt="orange cat"></div>
+</div>
+
+<div class="form-items">
+<!--Search for cat profile via form-->
+<form action="/profile" method="get">
+  <label for="search" class="page-text">Search for a cat:</label>
+  <input type="text" id="input" name="name">
+  <button>Search</button>
+</form>
+</div>
+<!--Upload photo via form-->
+<div class="form-items">
+<form action="/upload" method="POST" enctype="multipart/form-data">
+  <label for="image" class="page-text">Upload image:</label>
+  <input type="file" id="img-upload" name="image">
+  <button type="submit">Upload</button>
+</form>
+</div>

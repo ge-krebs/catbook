@@ -3,11 +3,16 @@ body {
   color: white;
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  max-width: 1028px;
   margin: 0 auto;
-  /* margin-top: 30%; */
-  font-size: 1.2rem;
+}
 
+/*HEADER*/
+header {
+  width: 100%;
+  font-size: 2rem;
+  font-family: 'Londrina Solid', cursive;
+  font-weight: 100;
+  padding: 0px;
 }
 
 #header {
@@ -17,12 +22,6 @@ body {
   border-bottom: 5px solid rgb(219, 246, 255);
   padding-top: 20px;
   font-size: 2rem;
-}
-
-h1 {
-  font-family: 'Yatra One', cursive;
-  margin: 0 auto;
-  text-decoration: none;
 }
 
 .display-pic {
@@ -66,4 +65,42 @@ button {
   margin: 20px 20px 20px 20px;
   margin: 0 auto;
   border: white solid 2px;
+}
+
+/*CAT IMG CONTAINER */
+#cat-img-container {
+  /* background-color: pink; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.sml-cat-img {
+  /* background-color: aquamarine; */
+  color: black;
+  width: 150px;
+  height: 100px;
+  border: 4px solid white;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.cat-img-file {
+  height: 100px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+/*FOOTER*/
+
+footer {
+  background-color: rgb(93, 150, 169);
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color:white;
+  bottom: 0;
 }
