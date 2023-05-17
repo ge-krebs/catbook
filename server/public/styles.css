@@ -74,7 +74,19 @@ button {
 
 .form-label {
   margin: 10px 20px 10px 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Londrina Solid', cursive;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.label-btn {
+  background-color: rgb(219, 246, 255);
+  color:  rgb(93, 150, 169);
+  margin: 10px 20px 10px 20px;
+  font-family: 'Londrina Solid', cursive;
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 #img-upload {

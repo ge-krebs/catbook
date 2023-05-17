@@ -1,10 +1,10 @@
 const express = require('express')
-//file upload
-const fileUpload = require('express-fileupload')
 //hbs express
 const hbs = require('express-handlebars')
 //promises
 const fs = require('node:fs/promises')
+//file upload
+const fileUpload = require('express-fileupload')
 
 const server = express()
 
@@ -23,15 +23,9 @@ server.engine(
 server.set('view engine', 'hbs')
 server.set('views', __dirname + '/views')
 server.use(express.static(__dirname + '/public'))
-
-server.use(express.urlencoded({ extended: false }))
-
 //file upload
 server.use(fileUpload())
-
-server.get('/compliment', (req, res) => {
-  res.send('<h1>you look <em>nice</em> today</h1>')
-})
+server.use(express.urlencoded({ extended: false }))
 
 // R O U T E S //
 
@@ -47,7 +41,6 @@ server.get('/profiles/:id', (req, res) => {
   fs.readFile(data, 'utf-8')
     .then((catData) => {
       const parsedData = JSON.parse(catData)
-      console.log(parsedData)
       const cat = parsedData.cats.find((cat) => cat.id == id)
       return res.render('profiles', cat)
     })
@@ -68,6 +61,13 @@ server.post('/createProfile', (req, res) => {
   //move image to public folder
   image.mv(__dirname + '/public/' + image.name)
   console.log(image.name)
+  //read cat data.json file to find id
+  //create object for new cat
+  //append new object to existing data araray
+  // fs.readFile(data, 'utf-8')
+  //   .then(catData => {
+
+  //   })
 })
 
 //get profile by search name

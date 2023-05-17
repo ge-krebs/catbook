@@ -1,12 +1,12 @@
 {{!-- create new cat profile --}}
-<form class="create-profile-form" action="/profiles/createProfile" encType="multipart/form-data" method="post">
-  <label class="form-label" for="image">Profile Pic -></label>
-  <input type="file" name="ppUpload">
-  <label class="form-label" for="name">Name -></label>
+<form class="create-profile-form" action="/createProfile" encType="multipart/form-data" method="post">
+  <label class="form-label" for="image">Profile Pic</label>
+  <input class="label-btn" type="file" name="image">
+  <label class="form-label" for="name">Name</label>
   <input class="input" type="text" name="name">
-  <label class="form-label" for="handle">Username/Handle -></label>
+  <label class="form-label" for="handle">Username/Handle</label>
   <input class="input" type="text" name="handle">
-  <label class="form-label" for="quote">Quote -></label>
+  <label class="form-label" for="quote">Quote</label>
   <input class="input" type="text" name="text">
-  <input type="submit" value="Create Profile">
+  <input class="label-btn" type="submit" value="Create Profile">
 </form>
