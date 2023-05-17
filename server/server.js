@@ -3,8 +3,14 @@ const express = require('express')
 const fileUpload = require('express-fileupload')
 //hbs express
 const hbs = require('express-handlebars')
+//promises
+const fs = require('node:fs/promises')
 
 const server = express()
+
+//get data from json file into variable
+const data = __dirname + '/data/data.json'
+
 module.exports = server
 
 //middleware
@@ -18,9 +24,8 @@ server.set('view engine', 'hbs')
 server.set('views', __dirname + '/views')
 server.use(express.static(__dirname + '/public'))
 
-// server.use(express.static('server/public'))
-
 server.use(express.urlencoded({ extended: false }))
+
 //file upload
 server.use(fileUpload())
 
@@ -35,6 +40,24 @@ server.get('/', (req, res) => {
   const template = 'home'
   res.render(template)
 })
+
+//profiles route
+server.get('/profiles/:id', (req, res) => {
+  const id = req.params.id
+  fs.readFile(data, 'utf-8')
+    .then((catData) => {
+      const parsedData = JSON.parse(catData)
+      console.log(parsedData)
+      const cat = parsedData.cats.find((cat) => cat.id == id)
+      return res.render('profiles', cat)
+    })
+    .catch((err) => {
+      return res.status(500).send(err.message)
+    })
+})
+
+//create profile route - to be moved
+
 
 //get profile by search name
 // http://localhost:3000/profile?name=silvia
@@ -61,13 +84,10 @@ server.get('/getname', (req, res) => {
   res.sendFile(__dirname + '/public/get-name.html')
 })
 
-//post named compliment
-server.post('/named-compliment', (req, res) => {
-  res.send('<h1>' + req.body.name + ', you look beautiful today <3</h1>')
-})
-
 // https://pqina.nl/blog/upload-image-with-nodejs/
 // upload images to public?
+//will eventually be the add cat profile page
+//takes form data and adds to json data object as new array item
 server.post('/upload', (req, res) => {
   const { image } = req.files
   if (!image) return res.sendStatus(400)
