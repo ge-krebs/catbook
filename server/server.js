@@ -56,8 +56,19 @@ server.get('/profiles/:id', (req, res) => {
     })
 })
 
-//create profile route - to be moved
+//route for create profile page - to be moved
+server.get('/createProfile', (req, res) => {
+  return res.render('createProfile')
+})
 
+//create profile route - to be moved
+server.post('/createProfile', (req, res) => {
+  const { image } = req.files
+  if (!image) return res.sendStatus(400)
+  //move image to public folder
+  image.mv(__dirname + '/public/' + image.name)
+  console.log(image.name)
+})
 
 //get profile by search name
 // http://localhost:3000/profile?name=silvia
