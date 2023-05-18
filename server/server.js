@@ -10,8 +10,7 @@ const server = express()
 
 //get data from json file into variable
 const data = __dirname + '/data/data.json'
-
-module.exports = server
+console.log(data)
 
 //middleware
 server.engine(
@@ -55,20 +54,20 @@ server.get('/createProfile', (req, res) => {
 })
 
 //create profile route - to be moved
-server.post('/createProfile', (req, res) => {
-  const { image } = req.files
-  if (!image) return res.sendStatus(400)
-  //move image to public folder
-  image.mv(__dirname + '/public/' + image.name)
-  console.log(image.name)
-  //read cat data.json file to find id
-  //create object for new cat
-  //append new object to existing data araray
-  // fs.readFile(data, 'utf-8')
-  //   .then(catData => {
+// server.post('/createProfile', (req, res) => {
+//   const { image } = req.files
+//   if (!image) return res.sendStatus(400)
+// move image to public folder
+// image.mv(__dirname + '/public/' + image.name)
+// console.log(image.name)
+// read cat data.json file to find id
+// create object for new cat
+// append new object to existing data araray
+// fs.readFile(data, 'utf-8')
+//   .then(catData => {
 
-  //   })
-})
+//   })
+// })
 
 //get profile by search name
 // http://localhost:3000/profile?name=silvia
@@ -107,3 +106,5 @@ server.post('/upload', (req, res) => {
   image.mv(__dirname + '/public/' + image.name)
   res.sendFile(__dirname + '/public/get-name.html')
 })
+
+module.exports = server
