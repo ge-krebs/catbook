@@ -6,17 +6,9 @@
 
 <div class="form-items">
 <!--Search for cat profile via form-->
-<form action="/profile" method="get">
+<form action="/profiles" method="post">
   <label for="search" class="page-text">Search for a cat:</label>
-  <input type="text" id="input" name="name">
-  <button>Search</button>
-</form>
-</div>
-<!--Upload photo via form-->
-<div class="form-items">
-<form action="/upload" method="POST" enctype="multipart/form-data">
-  <label for="image" class="page-text">Upload image:</label>
-  <input type="file" id="img-upload" name="image">
-  <button type="submit">Upload</button>
+  <input type="text" class="form-label" name="catSearch">
+  <input type="submit" class="label-btn" value="Search">
 </form>
 </div>
