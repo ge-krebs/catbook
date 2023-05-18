@@ -2,6 +2,7 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const fs = require('node:fs/promises')
 const fileUpload = require('express-fileupload')
+const { parse } = require('node:path')
 
 const server = express()
 
@@ -40,7 +41,7 @@ server.get('/profiles/:id', (req, res) => {
       return res.render('profiles', cat)
     })
     .catch((err) => {
-      return res.status(500).send(err.message)
+      return 'oh no an error :(' + res.status(500).send(err.message)
     })
 })
 
@@ -77,30 +78,35 @@ fs.readFile(data, 'utf-8')
     //redirect to cat profile
     res.redirect('/profiles/' + id)
   })
-  .catch 
+  .catch((err) => {
+    return 'oh no an error :(' + res.status(500).send(err.message)
+  })
 })
-
-//get profiles by ID
-//http://localhost:3000/profiles/2
-server.get('/profiles/:id', (req, res) => {
-  const id = req.params.id
-  if (id === '1') {
-    res.sendFile(__dirname + '/silvia.html')
-  }
-  if (id === '2') {
-    res.sendFile(__dirname + '/sampson.html')
-  }
-})
-
 
 //SEARCH FOR CAT
-// server.post('/profiles', (req, res) => {
-//   const nameSearch = req.body.catSearch
-//   fs.readFile(data, 'utf-8')
-//   .then(catData => {
+server.post('/profiles', (req, res) => {
+  //converts returned name to lowercase
+  const nameSearch = req.body.catSearch.toLowerCase()
+  fs.readFile(data, 'utf-8')
+  .then(catData => {
+    const parsedData = JSON.parse(catData)
+    //loops through cat array to find each cats name
+    for(let i=0; i < parsedData.cats.length; i++) {
+      //updates cats name to lowercase to match against search
+      const catName = parsedData.cats[i].name.toLowerCase()
+      const id = parsedData.cats[i].id
+      //if search name = cats name redirect
+      if(nameSearch == catName){
+        res.redirect('/profiles/' + id)
+      } else {
+        //alert pop up not function not working
+        //alert("No cat found!")
+      }
+    }
+  })
+  .catch((err) => {
+    return 'oh no an error :(' + res.status(500).send(err.message)
+  })
 
-//   })
-//   .catch
-
-// })
+})
 module.exports = server
