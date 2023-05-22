@@ -1,0 +1,10 @@
+<div id="cat-profiles-container">
+  {{#each cats}}
+  <div class="cat-img-container">
+    <a href="/profiles/{{id}}">
+    <img class="cat-img-file" src="{{image}}" alt="cat profile pic">
+    </a>
+    <h3>{{handle}}</h3>
+  </div>
+  {{/each}}
+</div>

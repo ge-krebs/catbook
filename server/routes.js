@@ -1,17 +1,28 @@
-//START OF ROUTES PAGE NOT WORKING//
-
 const express = require('express')
 const router = express.Router()
 const fs = require('node:fs/promises')
 
 const data = __dirname + '/data/data.json'
 
+//Home page
 router.get('/', (req, res) => {
   const template = 'home'
   res.render(template)
 })
 
-//profiles route
+//all cat profiles route
+
+router.get('/profiles', (req, res) => {
+  fs.readFile(data, 'utf-8')
+    .then((catData) => {
+      return res.render('allProfiles', JSON.parse(catData))
+    })
+    .catch((err) => {
+      return 'oh no an error :(' + res.status(500).send(err.message)
+    })
+})
+
+//individual profiles route with id
 router.get('/profiles/:id', (req, res) => {
   const id = req.params.id
   fs.readFile(data, 'utf-8')

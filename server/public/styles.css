@@ -19,6 +19,18 @@ header {
   justify-content: center;
 }
 
+nav {
+  max-width: 400px;
+  color: white;
+  text-decoration: none;
+  margin: 0 auto;
+  margin-top: -30px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-family: 'Londrina Solid', cursive;
+  border-top: solid white 2px;
+}
+
 #cat-gif {
   margin-top: 32px;
   margin-left: 20px;
@@ -101,28 +113,31 @@ button {
 }
 
 /*CAT IMG CONTAINER */
-#cat-img-container {
+#cat-profiles-container {
   /* background-color: pink; */
+  max-width: 1028px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.sml-cat-img {
-  color: black;
-  width: 150px;
-  height: 100px;
-  border: 4px solid white;
-  border-radius: 50%;
-  margin-left: 20px;
-  margin-right: 20px;
+.cat-img-container {
+  /* background-color: pink; */
+  font-family: 'Roboto', sans-serif;
+  font-size: .8rem;
+  border-radius: 10%;
+  margin: 10px;
+  padding: 30px;
+  width: 140px;
 }
 
 .cat-img-file {
-  height: 100px;
-  width: 150px;
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+  border: 2px solid white;
   border-radius: 50%;
 }
 
