@@ -1,12 +1,12 @@
-{{!-- create new cat profile --}}
+{{>nav}}
 <form class="create-profile-form" action="/createProfile" encType="multipart/form-data" method="post">
   <label class="form-label" for="image">Profile Pic</label>
-  <input class="label-btn" type="file" name="image">
+  <input class="label-btn" type="file" name="image" id="image">
   <label class="form-label" for="name">Name</label>
-  <input class="input" type="text" name="name">
+  <input class="input" type="text" name="name" id="name">
   <label class="form-label" for="handle">Username/Handle</label>
-  <input class="input" type="text" name="handle">
+  <input class="input" type="text" name="handle" id="handle">
   <label class="form-label" for="quote">Quote</label>
-  <input class="input" type="text" name="quote">
+  <input class="input" type="text" name="quote" id="quote">
   <input class="label-btn" type="submit" value="Create Profile">
 </form>
