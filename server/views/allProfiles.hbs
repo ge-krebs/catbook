@@ -1,3 +1,12 @@
+{{>nav}}
+<div class="form-items">
+<!--Search for cat profile via form-->
+<form action="/profiles" method="post">
+  <label for="search" class="page-text">Search for a cat:</label>
+  <input type="text" class="form-label" name="catSearch">
+  <input type="submit" class="label-btn" value="Search">
+</form>
+</div>
 <div id="cat-profiles-container">
   {{#each cats}}
   <div class="cat-img-container">

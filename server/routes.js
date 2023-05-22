@@ -38,7 +38,13 @@ router.get('/profiles/:id', (req, res) => {
 
 //route for create profile page
 router.get('/createProfile', (req, res) => {
-  return res.render('createProfile')
+  fs.readFile(data, 'utf-8')
+    .then((catData) => {
+      return res.render('createProfile', JSON.parse(catData))
+    })
+    .catch((err) => {
+      return 'oh no an error :(' + res.status(500).send(err.message)
+    })
 })
 
 //route/post details for profile creation
@@ -46,7 +52,7 @@ router.post('/createProfile', (req, res) => {
   const { image } = req.files
   if (!image) return res.sendStatus(400)
   // move image to public folder
-  image.mv(__dirname + '/public/' + image.name)
+  image.mv(__dirname + '/public/images/' + image.name)
   // read cat data.json file to find id
   // create object for new cat
   // append new object to existing data araray
@@ -58,9 +64,9 @@ router.post('/createProfile', (req, res) => {
     let newCat = {
       id: id,
       name: req.body.name,
-      handle: '@' + req.body.handle,
+      handle: '@' + req.body.handle.toLowerCase(),
       quote: req.body.quote,
-      image: '/' + image.name,
+      image: '/images/' + image.name,
     }
     //add new cat to obj/arr
     parsedData.cats.push(newCat)
