@@ -52,7 +52,7 @@ nav {
 }
 
 .nav-btn a {
-  color: rgb(73, 126, 143);
+  color: rgb(42, 112, 136);
 }
 
 #cat-gif {
@@ -66,7 +66,7 @@ nav {
 
 .home-btn {
   background-color: rgb(219, 246, 255);
-  color: rgb(73, 126, 143);
+  color: rgb(42, 112, 136);
   border: 2px solid white;
   border-radius: 5px;
   font-family: 'Londrina Solid', cursive;
@@ -114,7 +114,7 @@ nav {
 /*input buttons*/
 .input {
   background-color: rgb(219, 246, 255);
-  color: rgb(73, 126, 143);
+  color: rgb(42, 112, 136);
   border: white solid 2px;
   font-size: 1.5rem;
   max-width: 200px;
@@ -135,7 +135,7 @@ nav {
 
 .label-btn {
   background-color: rgb(219, 246, 255);
-  color:  rgb(93, 150, 169);
+  color: rgb(42, 112, 136);
   margin: 10px 20px 10px 20px;
   font-family: 'Londrina Solid', cursive;
   font-weight: 300;
@@ -143,7 +143,7 @@ nav {
 }
 
 #img-upload {
-  color: rgb(73, 126, 143);
+  color: rgb(42, 112, 136);
   background-color: rgb(219, 246, 255);
   display: flex;
   width: 200px;
@@ -185,7 +185,7 @@ nav {
 /*FOOTER*/
 
 footer {
-  color: rgb(73, 126, 143);
+  color: rgb(42, 112, 136);
   position: absolute;
   width: 100%;
   text-align: center;
