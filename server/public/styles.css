@@ -21,6 +21,10 @@ header {
   border-bottom: 2px solid white;
 }
 
+h1 {
+    font-family: 'Londrina Solid', cursive;
+}
+
 /*all links*/
 a {
   text-decoration: none;
