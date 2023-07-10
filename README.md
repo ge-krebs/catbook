@@ -1,3 +1,3 @@
 # CatBook
 
-A simple facebook style application created using frontend technologies
+A simple facebook style application created during my time at Dev Academy using frontend technologies
